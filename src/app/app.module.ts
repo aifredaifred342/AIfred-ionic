@@ -12,6 +12,7 @@ import { HttpDataService } from './services/http-data.service';
 import { CreateMeetingPage } from './create-meeting/create-meeting.page';
 import { CreateMeetingService } from './services/create-meeting.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CreateMeetingPage],
