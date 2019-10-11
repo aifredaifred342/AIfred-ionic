@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-meeting',
   templateUrl: './meeting.component.html',
   styleUrls: ['./meeting.component.scss'],
 })
-export class MeetingComponent implements OnInit {
+export class MeetingComponent {
 
   public meeting = {
     name: 'Reunión 1',
