@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CreateMeetingPage } from './create-meeting/create-meeting.page';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'meeting/:id',
     loadChildren: () => import('./meeting/meeting.module').then(m => m.MeetingComponentModule)
+  },
+  {
+    path: 'create-meeting',
+    component: CreateMeetingPage
   }
 ];
 

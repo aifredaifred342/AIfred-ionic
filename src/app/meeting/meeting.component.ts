@@ -11,7 +11,7 @@ export class MeetingComponent {
     name: 'Reunión 1',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula lectus justo.',
     date: '01/02/2019',
-    image: '/assets/shapes.svg',
+    image: '/assets/video.png',
     emotions: [
       {name: 'emoción 1', percent: 10},
       {name: 'emoción 2', percent: 30},
