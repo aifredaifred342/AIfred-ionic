@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
+import { ChartType, ChartOptions, ChartDataSets, RadialChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 @Component({
@@ -11,7 +11,7 @@ export class MeetingComponent {
   public emotionsLoaded = false;
   public topicsLoaded = false;
   public peopleLoaded = false;
-  private colors = ['#2196f3', '#81d4fa', '#a5d6a7', '#ffd54f'];
+  private colors = ['#2196f3', '#81d4fa', '#a5d6a7', '#ffd54f', '#f48fb1'];
 
   public meeting = {
     name: 'Reunión 1',
@@ -21,13 +21,16 @@ export class MeetingComponent {
     emotions: [
       { name: 'Frustración', percent: 100 },
       { name: 'Enfadado', percent: 300 },
-      { name: 'Alegría', percent: 400 },
-      { name: 'Aceptación', percent: 200 }
+      { name: 'Alegría', percent: 150 },
+      { name: 'Aceptación', percent: 200 },
+      { name: 'Motivado', percent: 250 }
     ],
     topics: [
       { name: 'Hipotecas', percent: 200 },
       { name: 'Camunda', percent: 300 },
-      { name: 'Scrum', percent: 100 }
+      { name: 'Scrum', percent: 100 },
+      { name: 'QA', percent: 200 },
+      { name: 'Bloqueos', percent: 200 },
     ],
     peoples: [
       { name: 'Alejandro', percent: 200 },
@@ -78,6 +81,42 @@ export class MeetingComponent {
     { data: [15, 23, 7, 11, 5, 9, 30, 13, 70], label: 'Intervenciones' }
   ];
 
+
+  public peopleEmotionRadarChartOptions: RadialChartOptions = {
+    responsive: true,
+  };
+  public peopleEmotionRadarChartLabels: Label[] = ['Frustración', 'Enfadado', 'Alegría', 'Aceptación', 'Motivado'];
+
+  public peopleEmotionRadarChartData: ChartDataSets[] = [
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Daniel' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Rosa' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Pablo' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Óscar' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Sergio' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Pep' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Adrian' }
+  ];
+  public peopleEmotionRadarChartType: ChartType = 'radar';
+
+  public peopleTopicsRadarChartOptions: RadialChartOptions = {
+    responsive: true,
+  };
+  public peopleTopicsRadarChartLabels: Label[] = ['Hipotecas', 'Camunda', 'Scrum', 'QA', 'Bloqueos'];
+
+  public peopleTopicsRadarChartData: ChartDataSets[] = [
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Daniel' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Rosa' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Pablo' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Óscar' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Sergio' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Pep' },
+    { data: [this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber, this.randomNumber], label: 'Adrian' }
+  ];
+  public peopleTopicsRadarChartType: ChartType = 'radar';
+
+  private get randomNumber() {
+    return Math.floor((Math.random() * 100) + 1);
+  }
 
   constructor() {
     this.generateEmotions();

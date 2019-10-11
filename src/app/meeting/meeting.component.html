@@ -63,5 +63,35 @@
         </ion-card-content>
       </div>
     </ion-card>
+    <ion-card *ngIf="topicsLoaded" class="animated bounceIn delay-1s">
+      <div class="chart">
+        <ion-card-header>
+          <ion-card-title>Emociones por persona</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart
+              [datasets]="peopleEmotionRadarChartData"
+              [options]="peopleEmotionRadarChartOptions"
+              [labels]="peopleEmotionRadarChartLabels"
+              [chartType]="peopleEmotionRadarChartType">
+            </canvas>
+        </ion-card-content>
+      </div>
+    </ion-card>
+    <ion-card *ngIf="topicsLoaded" class="animated bounceIn delay-1s">
+      <div class="chart">
+        <ion-card-header>
+          <ion-card-title>Temas por persona</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart
+              [datasets]="peopleTopicsRadarChartData"
+              [options]="peopleTopicsRadarChartOptions"
+              [labels]="peopleTopicsRadarChartLabels"
+              [chartType]="peopleTopicsRadarChartType">
+            </canvas>
+        </ion-card-content>
+      </div>
+    </ion-card>
   </div>
 </ion-content>
