@@ -6,16 +6,12 @@ import { CreateMeetingService } from '../services/create-meeting.service';
 @Component({
   selector: 'app-create-meeting',
   templateUrl: './create-meeting.page.html',
-  styleUrls: ['./create-meeting.page.scss'],
+  styleUrls: ['./create-meeting.page.scss']
 })
 export class CreateMeetingPage implements OnInit {
-
   createMeetingForm: FormGroup;
 
-  constructor(private fb: FormBuilder,
-              private modalCtrl: ModalController,
-              private createMeetingService: CreateMeetingService
-  ) { }
+  constructor(private fb: FormBuilder, private modalCtrl: ModalController, private createMeetingService: CreateMeetingService) {}
 
   ngOnInit() {
     this.createMeetingForm = this.fb.group({
@@ -34,6 +30,7 @@ export class CreateMeetingPage implements OnInit {
   createMeeting() {
     const values = this.createMeetingForm.getRawValue();
     this.createMeetingService.save(values);
+    window.open('https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/4452cf7e59/?location=Trial');
     this.dismissModal();
   }
 }
