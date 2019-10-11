@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'meeting/:id',
     loadChildren: () => import('./meeting/meeting.module').then(m => m.MeetingComponentModule)
+  },
+  {
+    path: 'create-meeting',
+    loadChildren: () => import('./create-meeting/create-meeting.module').then(m => m.CreateMeetingPageModule)
   }
 ];
 

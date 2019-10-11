@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { CreateMeetingPage } from '../create-meeting/create-meeting.page';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +36,13 @@ export class HomePage {
     }
   ];
 
-  constructor() {}
+  constructor(public modalController: ModalController) {}
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: CreateMeetingPage
+    });
+    return await modal.present();
+  }
 
 }
