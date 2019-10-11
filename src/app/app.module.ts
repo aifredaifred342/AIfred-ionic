@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpDataService } from './services/http-data.service';
 import { CreateMeetingPage } from './create-meeting/create-meeting.page';
+import { CreateMeetingService } from './services/create-meeting.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, CreateMeetingPage],
@@ -19,9 +21,12 @@ import { CreateMeetingPage } from './create-meeting/create-meeting.page';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonicModule,
+    HttpClientModule
   ],
   providers: [
+    CreateMeetingService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

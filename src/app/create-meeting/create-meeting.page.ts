@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { CreateMeetingService } from '../services/create-meeting.service';
 
 @Component({
   selector: 'app-create-meeting',
@@ -12,7 +13,8 @@ export class CreateMeetingPage implements OnInit {
   createMeetingForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private modalCtrl: ModalController
+              private modalCtrl: ModalController,
+              private createMeetingService: CreateMeetingService
   ) { }
 
   ngOnInit() {
@@ -30,7 +32,8 @@ export class CreateMeetingPage implements OnInit {
   }
 
   createMeeting() {
-    console.log(this.createMeetingForm);
+    const values = this.createMeetingForm.getRawValue();
+    this.createMeetingService.save(values);
     this.dismissModal();
   }
 }
