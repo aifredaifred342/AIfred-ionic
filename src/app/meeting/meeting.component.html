@@ -11,14 +11,57 @@
 
 <ion-content>
   <div class="meeting-container">
-    <ion-card class="meeting-card">
-      <img [src]="meeting.image" alt="" />
+    <ion-card class="meeting-card animated bounceIn">
+      <video controls>
+          <source [src]="meeting.image" type="video/mp4">
+      </video>
       <ion-card-header>
         <ion-card-subtitle>{{meeting.date}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <p>{{meeting.description}}</p>
       </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="emotionsLoaded" class="animated bounceIn delay-1s">
+      <div class="chart">
+        <ion-card-header>
+          <ion-card-title>Emociones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas baseChart [data]="emotionsPieChartData" [labels]="emotionsPieChartLabels"
+            [chartType]="emotionsPieChartType" [options]="emotionsPieChartOptions" [colors]="emotionsPieChartColors"
+            [legend]="emotionsPieChartLegend">
+          </canvas>
+        </ion-card-content>
+      </div>
+    </ion-card>
+    <ion-card *ngIf="topicsLoaded" class="animated bounceIn delay-1s">
+      <div class="chart">
+        <ion-card-header>
+          <ion-card-title>Temas de conversación</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas baseChart [data]="topicsPieChartData" [labels]="topicsPieChartLabels" [chartType]="topicsPieChartType"
+            [options]="topicsPieChartOptions" [colors]="topicsPieChartColors" [legend]="topicsPieChartLegend">
+          </canvas>
+        </ion-card-content>
+      </div>
+    </ion-card>
+    <ion-card *ngIf="topicsLoaded" class="animated bounceIn delay-1s">
+      <div class="chart">
+        <ion-card-header>
+          <ion-card-title>Intervenciones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart
+            [datasets]="peopleBarChartData"
+            [labels]="peopleBarChartLabels"
+            [options]="peopleBarChartOptions"
+            [legend]="peopleBarChartLegend"
+            [chartType]="peopleBarChartType">
+          </canvas>
+        </ion-card-content>
+      </div>
     </ion-card>
   </div>
 </ion-content>

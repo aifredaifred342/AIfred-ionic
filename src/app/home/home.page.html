@@ -12,7 +12,7 @@
 <ion-content>
   <ion-title>Registro de reunión</ion-title>
   <div class="log-container">
-    <ion-card class="welcome-card" *ngFor="let log of logList" routerLink="/meeting/1">
+    <ion-card class="welcome-card" *ngFor="let log of logList" routerLink="/meeting/{{log.id}}">
       <img [src]="log.image" alt="" />
       <div class="button-container">
         <ion-fab-button>
