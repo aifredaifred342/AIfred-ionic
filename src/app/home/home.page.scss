@@ -2,3 +2,19 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+ion-card-content {
+  padding-top: 0px;
+}
+
+ion-title {
+  margin: 10px;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: -23px;
+}
