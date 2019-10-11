@@ -1,10 +1,11 @@
 {
-  "name": "AIfred-ionic",
+  "name": "ai-fred",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
+    "start": "node server.js",
     "serve.local": "ng serve --port 1234",
     "heroku-postbuild": "ng build --prod",
     "build": "ng build",
