@@ -5,12 +5,16 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve.local": "ng serve --port 1234",
     "heroku-postbuild": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "engines": {
+    "node": "^10.16.3",
+    "npm": "6.4.1"
   },
   "private": true,
   "dependencies": {
