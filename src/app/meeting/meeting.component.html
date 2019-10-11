@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{meeting.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="meeting-container">
+    <ion-card class="meeting-card">
+      <img [src]="meeting.image" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>{{meeting.date}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{meeting.description}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

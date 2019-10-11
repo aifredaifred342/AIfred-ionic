@@ -11,18 +11,21 @@
 
 <ion-content>
   <ion-title>Registro de reunión</ion-title>
-  <ion-card class="welcome-card" *ngFor="let log of logList">
-    <img [src]="log.image" alt="" />
-    <div class="button-container">
-      <ion-fab-button><ion-icon name="send"></ion-icon></ion-fab-button>
-    </div>
-    <ion-card-header>
-      <ion-card-subtitle>{{log.date}}</ion-card-subtitle>
-      <ion-card-title>{{log.name}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{log.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
+  <div class="log-container">
+    <ion-card class="welcome-card" *ngFor="let log of logList" routerLink="/meeting/1">
+      <img [src]="log.image" alt="" />
+      <div class="button-container">
+        <ion-fab-button>
+          <ion-icon name="send"></ion-icon>
+        </ion-fab-button>
+      </div>
+      <ion-card-header>
+        <ion-card-subtitle>{{log.date}}</ion-card-subtitle>
+        <ion-card-title>{{log.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{log.description}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
