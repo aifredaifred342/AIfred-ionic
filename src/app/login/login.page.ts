@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  auth(item: any) {
+  auth() {
     this.router.navigate(['/home']);
   }
 }
