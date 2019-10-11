@@ -3,13 +3,15 @@
     <ion-card>
       <ion-card-header>Login</ion-card-header>
       <ion-card-content>
+        <form [formGroup]="loginForm">
           <ion-item>
-              <ion-input placeholder="Username"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input placeholder="Password" type="password"></ion-input>
-            </ion-item>
-            <ion-button expand="full">Log in</ion-button>
+            <ion-input placeholder="Username" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button expand="full" (click)="auth()" [disabled]="loginForm.invalid">Log in</ion-button>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
