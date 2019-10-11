@@ -1,0 +1,9 @@
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    & > ion-card  {
+        max-width: 300px;
+    }
+}

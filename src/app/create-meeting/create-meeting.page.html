@@ -7,16 +7,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen>
-  <form [formGroup]="createMeetingForm">
-    <ion-item>
-      <input type="file" formControlName="file">
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Title" type="text" formControlName="title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Description" type="text" formControlName="description"></ion-input>
-    </ion-item>
-    <ion-button expand="full" [disabled]="createMeetingForm.invalid" (click)="createMeeting()">Crear</ion-button>
-  </form>
+  <div class="modal-container">
+    <form [formGroup]="createMeetingForm">
+      <ion-item>
+        <input type="file" formControlName="file">
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Title" type="text" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Description" type="text" formControlName="description"></ion-input>
+      </ion-item>
+      <ion-button expand="full" [disabled]="createMeetingForm.invalid" (click)="createMeeting()">Crear</ion-button>
+    </form>
+  </div>
 </ion-content>
